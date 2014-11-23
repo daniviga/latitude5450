@@ -1,11 +1,20 @@
 ACTION!="add|change", GOTO="mbim_to_qmi_rules_end"
 
-SUBSYSTEM!="usb", GOTO="mbim_to_qmi_rules_end"
-
 # ignore any device with only one configuration
-ATTR{bNumConfigurations}=="1", GOTO="mbim_to_qmi_rules_end"
+SUBSYSTEM=="usb", \
+        ATTR{bNumConfigurations}=="1", GOTO="mbim_to_qmi_rules_end"
 
 # force Dell WWAN 5809e to configuration #1
-ATTR{idVendor}=="413c",ATTR{idProduct}=="81b1",ATTR{bConfigurationValue}="1"
+SUBSYSTEM=="usb", \
+        ATTR{idVendor}=="413c", ATTR{idProduct}=="81b1", \
+        RUN+="/sbin/modprobe -b qcserial"
+
+SUBSYSTEM=="usb", \
+        ATTR{idVendor}=="413c", ATTR{idProduct}=="81b1", \
+        ATTR{bConfigurationValue}="1"
+
+SUBSYSTEM=="drivers", \
+        ENV{DEVPATH}=="/bus/usb-serial/drivers/qcserial", \
+        ATTR{new_id}="413c 81b1"
 
 LABEL="mbim_to_qmi_rules_end"
