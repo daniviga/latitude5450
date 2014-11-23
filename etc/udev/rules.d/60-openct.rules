@@ -69,6 +69,8 @@ ATTR{idVendor}=="0a89", ATTR{idProduct}=="0020", RUN+="/lib/udev/openct_usb /dev
 ATTR{idVendor}=="0a89", ATTR{idProduct}=="0012", RUN+="/lib/udev/openct_usb /dev/$name"
 # ePass3000
 ATTR{idVendor}=="096e", ATTR{idProduct}=="0401", RUN+="/lib/udev/openct_usb /dev/$name"
+# Broadcom 5880
+ATTR{idVendor}=="0a5c", ATTR{idProduct}=="5801", RUN+="/lib/udev/openct_usb /dev/$name"
 
 LABEL="openct_usb_rules_end"
 
