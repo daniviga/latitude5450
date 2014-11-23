@@ -1,0 +1,37 @@
+#!/bin/bash
+
+GPSDEV=/dev/ttyUSB0
+
+
+
+startstop() {
+    DO=$1
+
+    echo "\$GPS_${DO^^}" > $GPSDEV
+
+    if [ $? -eq 0  ];
+    then
+        echo -e "[ \e[01;32mOK\e[0m ]\tGPS $DO"
+    else
+        echo -e "[ \e[01;31m!!\e[0m ]\tSomenthing went wrong. Cannot $DO GPS"
+        exit 1
+    fi
+}
+
+
+if [ ! -w $GPSDEV ];
+then
+    echo $"Current user $(whoami) doesn't have permission to write to ${GPSDEV}. Please add it to the 'dialout' group."
+    exit 1
+fi
+
+
+case "$1" in
+
+'start' | 'stop')
+    startstop $1
+    ;;
+*)
+    echo $"Usage: $0 [start|stop]"
+    exit 1 ;;
+esac
