@@ -30,6 +30,14 @@ To stop the GPS
 echo "\$GPS_STOP" > /dev/ttyUSB0
 ```
 
-In the ```bin``` folder you can find an utility (```gobigps```) to easily start and stop the GPS.
+In the ```bin``` folder you can find an utility (```gobigps```) to easily start and stop the GPS. To be able to use this utility as normal user (more in general, to use the GPS) the user must be member of the ```dialout``` group.
+
+You can check if the GPS is running with a simple ```cat```
+
+```bash
+cat /dev/ttyUSB0
+```
+
+or using _QGIS_. 
 
 Work is still in progress!
