@@ -31,3 +31,5 @@ echo "\$GPS_STOP" > /dev/ttyUSB0
 ```
 
 In the ```bin``` folder you can find an utility (```gobigps```) to easily start and stop the GPS.
+
+Work is still in progress!
