@@ -1,6 +1,6 @@
 ## Dell Latitude E5*50 Linux support
 
-Tested on my Dell Latitude E5450 (late 2014) with Fedora 21 64bit
+Tested on my Dell Latitude E5450 (late 2014) with Fedora 21 64bit, BIOS A02.
 
 ### WWAN module
 
