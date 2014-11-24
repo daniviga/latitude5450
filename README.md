@@ -4,7 +4,7 @@ Tested on my Dell Latitude E5450 (late 2014) with Fedora 21 64bit
 
 ### WWAN module
 
-The Dell Latitude E5*50 could have a "Dell Wireless 5809e Gobi™ 4G LTE Mobile Broadband Card" WWAN module. It's based on the Qualcomm Gobi™.
+Dell Latitude E5*50 laptops could have a "Dell Wireless 5809e Gobi™ 4G LTE Mobile Broadband Card" WWAN module installed. This WWAN device is based on the Qualcomm Gobi™.
 
 |   |   |
 |---|---|
