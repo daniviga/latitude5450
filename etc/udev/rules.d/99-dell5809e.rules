@@ -1,4 +1,5 @@
 ACTION!="add|change", GOTO="mbim_to_qmi_rules_end"
+SUBSYSTEM!="usb|drivers", GOTO="mbim_to_qmi_rules_end"
 
 # load qcserial module
 SUBSYSTEM=="usb", \
