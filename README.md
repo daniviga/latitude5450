@@ -11,7 +11,7 @@ Dell Latitude E5*50 laptops could have a "Dell Wireless 5809e Gobi™ 4G LTE Mob
 | Name | Dell Wireless 5809e Gobi™ 4G LTE Mobile Broadband Card |
 | ID | 413c:81b1 |
 | Kernel module | qcserial |
-|   |   |
+| Tested kernels  | 3.17, 3.16 |
 
 The device id of this Gobi™ module is still missing from the ```qcserial``` devices table, so I created a udev rule which loads the ```qcserial``` module, switchs the ```bConfigurationValue``` from 2 to 1** and adds the new device id ```413c:81b1``` to the ```qcserial``` driver.
 
