@@ -1,9 +1,5 @@
 ACTION!="add|change", GOTO="mbim_to_qmi_rules_end"
 
-# ignore any device with only one configuration
-SUBSYSTEM=="usb", \
-        ATTR{bNumConfigurations}=="1", GOTO="mbim_to_qmi_rules_end"
-
 # load qcserial module
 SUBSYSTEM=="usb", \
         ATTR{idVendor}=="413c", ATTR{idProduct}=="81b1", \
