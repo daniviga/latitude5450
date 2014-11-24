@@ -13,3 +13,19 @@ The Dell Latitude E5*50 could have a "Dell Wireless 5809e Gobi™ 4G LTE Mobile 
 | Kernel module | qcserial |
 
 I created a udev rule which loads the ```qcserial``` module, switchs the ```bConfigurationValue``` from 2 to 1 and add the new device id ```413c:81b1``` to the ```qcserial``` driver.
+
+#### GPS ####
+
+To start the GPS
+
+```bash
+echo "\$GPS_START" > /dev/ttyUSB0
+```
+
+To stop the GPS
+
+```bash
+echo "\$GPS_STOP" > /dev/ttyUSB0
+```
+
+In the ```bin``` folder you can find an utility (```gobigps```) to easily start and stop the GPS.
