@@ -41,6 +41,17 @@ You can check if the GPS is running with a simple ```cat```
 cat /dev/ttyUSB0
 ```
 
-or using _QGIS_. 
+or using _QGIS_.
+
+### Smart-card reader
+
+The Broadcom 5880v5 used in this Latitude (id `0a5c:5804`) is supported by `pcsc-lite-ccid` starting from release 1.4.19. Fedora 21 and 22 provide version 1.4.18; `pcsc-lite-ccid-1.4.19`, backported from rawhide, can be downloaded from the following repo:
+
+https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/
+
+```bash
+sudo dnf copr enable dani/ccid-drivers-backport
+sudo dnf install pcsc-lite-ccid
+```
 
 Work is still in progress!
