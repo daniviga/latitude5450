@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2014, Daniele Viganò (daniele@vigano.me)
+# Copyright (c) 2015, Daniele Viganò (daniele@vigano.me)
 #
 # gobigps is free software: you can redistribute it and/or modify it
 # under the terms of the GNU Affero General Public License as published
@@ -44,6 +44,6 @@ case "$1" in
     startstop $1
     ;;
 *)
-    echo $"Usage: $0 [start|stop]"
+    echo $"Usage: $0 <start|stop>"
     exit 1 ;;
 esac
