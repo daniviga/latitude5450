@@ -57,7 +57,7 @@ sudo dnf install pcsc-lite-ccid
 
 Using YUM:
 ```bash
-wget -O- https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/repo/fedora-22/dani-ccid-drivers-backport-fedora-21.repo | sudo tee /etc/yum.repos.d/dani-ccid-drivers-backport-fedora-21.repo
+wget -O- https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/repo/fedora-21/dani-ccid-drivers-backport-fedora-21.repo | sudo tee /etc/yum.repos.d/dani-ccid-drivers-backport-fedora-21.repo
 sudo yum install pcsc-lite-ccid
 ```
 
