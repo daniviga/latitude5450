@@ -1,6 +1,6 @@
 ## Dell Latitude E5*50 Linux support
 
-Tested on my Dell Latitude E5450 (late 2014) with Fedora 21/22 64bit, BIOS A07.
+Tested on a Dell Latitude E5450 (late 2014) with Fedora 21/22 64bit, BIOS A07.
 
 Please note: BIOS prior to A06 have a serious issue with de-bouncing/repeating keys under Linux, see http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360. Updating to [A07](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=DHD06&fileId=3469377694&osCode=W764&productCode=latitude-e5450-laptop&languageCode=EN&categoryId=BI) is strongly reccomended.
 
