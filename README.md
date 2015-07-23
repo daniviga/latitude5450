@@ -49,9 +49,15 @@ The Broadcom 5880v5 used in this Latitude (id `0a5c:5804`) is supported by `pcsc
 
 https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/
 
+Using DNF:
 ```bash
 sudo dnf copr enable dani/ccid-drivers-backport
 sudo dnf install pcsc-lite-ccid
 ```
 
-Work is still in progress!
+Using YUM:
+```bash
+wget -O- https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/repo/fedora-22/dani-ccid-drivers-backport-fedora-21.repo | sudo tee /etc/yum.repos.d/dani-ccid-drivers-backport-fedora-21.repo
+sudo yum install pcsc-lite-ccid
+```
+
