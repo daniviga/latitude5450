@@ -1,8 +1,8 @@
 ## Dell Latitude E5*50 Linux support
 
-Tested on a Dell Latitude E5450 (late 2014) with Fedora 21/22 64bit, BIOS A07.
+Tested on a Dell Latitude E5450 (late 2014) with Fedora 22/23 64bit, BIOS A10.
 
-Please note: BIOS prior to A06 have a serious issue with de-bouncing/repeating keys under Linux, see http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360. Updating to [A07](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=DHD06&fileId=3469377694&osCode=W764&productCode=latitude-e5450-laptop&languageCode=EN&categoryId=BI) is strongly reccomended.
+Please note: BIOS prior to A06 have a serious issue with de-bouncing/repeating keys under Linux, see http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360. Updating to [A10](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=DHD06&fileId=3469377694&osCode=W764&productCode=latitude-e5450-laptop&languageCode=EN&categoryId=BI) is strongly reccomended.
 
 ### WWAN module
 
@@ -43,7 +43,9 @@ cat /dev/ttyUSB0
 
 or using _QGIS_.
 
-### Smart-card reader
+### Smart-card reader (Fedora <= 22 only)
+
+NOTE: this is not needed anymore, starting from Fedora 23, since `pcsc-lite-ccid-1.4.19` is now part of the stable release.
 
 The Broadcom 5880v5 used in this Latitude (id `0a5c:5804`) is supported by `pcsc-lite-ccid` starting from release 1.4.19. Fedora 21 and 22 provide version 1.4.18; `pcsc-lite-ccid-1.4.19`, backported from rawhide, can be downloaded from the following repo:
 
