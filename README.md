@@ -12,10 +12,9 @@ Dell Latitude E5*50 laptops could have a "Dell Wireless 5809e Gobi™ 4G LTE Mob
 |---|---|
 | Name | Dell Wireless 5809e Gobi™ 4G LTE Mobile Broadband Card |
 | ID | 413c:81b1 |
-| Kernel module | qcserial |
-| Tested kernels  | 3.17, 3.16, 3.19, 4.0 |
+| Kernel module | qcserial, qmi_wwan |
 
-The device id of this Gobi™ module is still missing from the ```qcserial``` devices table, so I created a udev rule which loads the ```qcserial``` module, switchs the ```bConfigurationValue``` from 2 to 1** and adds the new device id ```413c:81b1``` to the ```qcserial``` driver.
+The device id of this Gobi™ module is still missing from the ```qcserial``` devices table, so I created a udev rule which loads the ```qcserial``` module, switchs the ```bConfigurationValue``` from 2 to 1** and adds the new device id ```413c:81b1``` to the ```qcserial``` driver. Current version of the udev rule loads the ```qmi_wwan``` modules too and adds the device id to that module to allow 4G/LTE connection through modern versions of NetworkManager/ModemManager.
 
 ** By default the device is loaded in the ```cdc_mbim``` mode (see https://www.kernel.org/doc/Documentation/networking/cdc_mbim.txt) instead in the classic serial modem mode.
 
@@ -63,3 +62,7 @@ wget -O- https://copr.fedoraproject.org/coprs/dani/ccid-drivers-backport/repo/fe
 sudo yum install pcsc-lite-ccid
 ```
 
+## Related links
+- http://www.0xf8.org/2015/06/dell-wireless-5809e-support-in-opensuse-13-2/
+- http://www.0xf8.org/2015/07/dell-wireless-5809e-support-in-linux-a-followup/
+- https://sigquit.wordpress.com/2015/02/09/dell-branded-sierra-wireless-3g4g-modem-not-online/
