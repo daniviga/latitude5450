@@ -27,7 +27,7 @@ SUBSYSTEM=="usb", \
 
 # add the new id in the qmi_wwan driver
 SUBSYSTEM=="drivers", \
-        ENV{DEVPATH}=="/bus/usb-serial/drivers/qmi_wwan", \
+        ENV{DEVPATH}=="/bus/usb/drivers/qmi_wwan", \
         ATTR{new_id}="413c 81b1"
 
 LABEL="mbim_to_qmi_rules_end"
