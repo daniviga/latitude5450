@@ -9,7 +9,8 @@ The bad commit is:
 ACPI: Execute _PTS before system reboot
 ```
 
-All kernels from 4.8.0 are affected at the moment. A patch is provided for reverting this commit.
+All kernels from 4.8.0 are affected at the moment. A special thanks to **Giampaolo** on *kbz* for bisecting sources down to the root cause.
+An `rpmbuild` compatible patch and an updated `spec` file are provided for reverting this commit. Binary *rpms* will be available soon.
 
 ### More info
 
