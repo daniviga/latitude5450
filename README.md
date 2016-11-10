@@ -48,7 +48,7 @@ or using _QGIS_.
 
 ### Smart-card reader (Fedora <= 22 only)
 
-NOTE: this is not needed anymore, starting from Fedora 23, since `pcsc-lite-ccid-1.4.19` is now part of the stable release.
+NOTE: this is not needed anymore, starting from Fedora 23 `pcsc-lite-ccid-1.4.19` is part of the stable release.
 
 The Broadcom 5880v5 used in this Latitude (id `0a5c:5804`) is supported by `pcsc-lite-ccid` starting from release 1.4.19. Fedora 21 and 22 provide version 1.4.18; `pcsc-lite-ccid-1.4.19`, backported from rawhide, can be downloaded from the following repo:
 
