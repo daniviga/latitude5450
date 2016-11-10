@@ -6,7 +6,7 @@ Please note: BIOS prior to A06 have a serious issue with de-bouncing/repeating k
 
 ### Shutdown/reboot issues with kernel >= 4.8
 
-See kernel/README.md
+See [kernel/README.md](kernel/README.md)
 
 ### WWAN module
 
