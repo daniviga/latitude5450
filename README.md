@@ -4,6 +4,10 @@ Tested on a Dell Latitude E5450 (late 2014) with Fedora 22/23 64bit, BIOS A10-A1
 
 Please note: BIOS prior to A06 have a serious issue with de-bouncing/repeating keys under Linux, see http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360. Updating to [A10](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=DHD06&fileId=3469377694&osCode=W764&productCode=latitude-e5450-laptop&languageCode=EN&categoryId=BI) or higher is strongly reccomended.
 
+### Shutdown/reboot issues with kernel >= 4.8
+
+See [kernel/README.md](kernel/README.md)
+
 ### WWAN module
 
 Dell Latitude E5*50 laptops could have a "Dell Wireless 5809e Gobi™ 4G LTE Mobile Broadband Card" WWAN module installed. This WWAN device is based on the Qualcomm Gobi™.
