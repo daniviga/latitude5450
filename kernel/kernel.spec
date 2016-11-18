@@ -42,7 +42,7 @@ Summary: The Linux kernel
 # For non-released -rc kernels, this will be appended after the rcX and
 # gitX tags, so a 3 here would become part of release "0.rcX.gitX.3"
 #
-%global baserelease 202~dv
+%global baserelease 201~dv
 %global fedora_build %{baserelease}
 
 # base_sublevel is the kernel version we're starting with and patching
@@ -54,7 +54,7 @@ Summary: The Linux kernel
 %if 0%{?released_kernel}
 
 # Do we have a -stable update to apply?
-%define stable_update 6
+%define stable_update 8
 # Set rpm version accordingly
 %if 0%{?stable_update}
 %define stablerev %{stable_update}
@@ -632,11 +632,20 @@ Patch850: v3-vfio-pci-Fix-integer-overflows-bitmask-check.patch
 #rhbz 1325354
 Patch852: 0001-HID-input-ignore-System-Control-application-usages-i.patch
 
-#rhbz 1391279
-Patch853: 0001-dm-raid-fix-compat_features-validation.patch
+#rhbz 1392885
+Patch853: 0001-drm-i915-Refresh-that-status-of-MST-capable-connecto.patch
+
+#rhbz 1390308
+Patch854: nouveau-add-maxwell-to-backlight-init.patch
+
+#rhbz 1385823
+Patch855: 0001-platform-x86-ideapad-laptop-Add-Lenovo-Yoga-910-13IK.patch
+
+#CVE-2016-8645 rhbz 1393904 1393908
+Patch856: 0001-tcp-take-care-of-truncations-done-by-sk_filter.patch
 
 #rhbz 1393513
-Patch854: revert_pts_before_reboot.patch
+Patch857: revert_pts_before_reboot.patch
 
 # END OF PATCH DEFINITIONS
 
@@ -2165,11 +2174,25 @@ fi
 #
 # 
 %changelog
-* Thu Nov 10 2016 Daniele Viganò <daniele@vigano.me> - 4.8.6-202
-- revert 'ACPI: Execute _PTS before system reboot'  (rhbz 1393513)
+* Fri Nov 18 2016 Daniele Viganò <daniele@vigano.me> - 4.8.8-201~dv
+- revert 'ACPI: Execute _PTS before system reboot' (rhbz 1393513)
 
-* Wed Nov  2 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.6-201
-- dm raid: fix compat_features validation (rhbz 1391279)
+* Tue Nov 15 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.8-200
+- Linux v4.8.8
+- Fix crash in tcp_collapse CVE-2016-8645 (rhbz 1393904 1393908)
+
+* Mon Nov 14 2016 Laura Abbott <labbott@fedoraproject.org>
+- Fix for some Yoga laptop WIFI (rhbz 1385823)
+
+* Fri Nov 11 2016 Justin M. Forbes <jforbes@fedoraproject.org>
+- Nouveau: Add Maxwell to backlight initialization (rhbz 1390308)
+
+* Fri Nov 11 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.7-200
+- Refresh status of MST capable connectors (rhbz 1392885)
+
+* Thu Nov 10 2016 Justin M. Forbes <jforbes@fedoraproject.org>
+- Linux v4.8.7
+- Fixes CVE-2016-8630 (rhbz 1393350 1393358)
 
 * Wed Nov  2 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.6-201
 - dm raid: fix compat_features validation (rhbz 1391279)
