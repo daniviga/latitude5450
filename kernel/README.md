@@ -10,7 +10,7 @@ ACPI: Execute _PTS before system reboot
 ```
 
 All kernels from 4.8.0 are affected at the moment. A special thanks to **Giampaolo** on *kbz* for bisecting sources down to the root cause.
-An `rpmbuild` compatible patch and an updated `spec` file are provided for reverting this commit. Binary *rpms* will be available soon.
+An `rpmbuild` compatible patch and an updated `spec` file are provided for reverting this commit. Binary *rpms* are available for [F24](https://daniele.vigano.me/files/5e366c91-41ac-4e43-be8e-15139c0463b1/f24/) and [F25](https://daniele.vigano.me/files/5e366c91-41ac-4e43-be8e-15139c0463b1/f25/).
 
 ### More info
 
