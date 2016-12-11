@@ -54,7 +54,7 @@ Summary: The Linux kernel
 %if 0%{?released_kernel}
 
 # Do we have a -stable update to apply?
-%define stable_update 10
+%define stable_update 13
 # Set rpm version accordingly
 %if 0%{?stable_update}
 %define stablerev %{stable_update}
@@ -525,6 +525,8 @@ Patch432: bcm283x-vc4-fixes.patch
 
 Patch433: AllWinner-net-emac.patch
 
+Patch434: ARM-Drop-fixed-200-Hz-timer-requirement-from-Samsung-platforms.patch
+
 Patch460: lib-cpumask-Make-CPUMASK_OFFSTACK-usable-without-deb.patch
 
 Patch466: input-kill-stupid-messages.patch
@@ -629,17 +631,26 @@ Patch850: v3-vfio-pci-Fix-integer-overflows-bitmask-check.patch
 #rhbz 1325354
 Patch852: 0001-HID-input-ignore-System-Control-application-usages-i.patch
 
-#rhbz 1392885
-Patch853: 0001-drm-i915-Refresh-that-status-of-MST-capable-connecto.patch
-
 #rhbz 1390308
 Patch854: nouveau-add-maxwell-to-backlight-init.patch
 
 #rhbz 1385823
 Patch855: 0001-platform-x86-ideapad-laptop-Add-Lenovo-Yoga-910-13IK.patch
 
+# CVE-2016-9755 rhbz 1400904 1400905
+Patch856: 0001-netfilter-ipv6-nf_defrag-drop-mangled-skb-on-ream-er.patch
+
+# CVE-2016-8655 rhbz 1400019 1401820
+Patch857: 0001-packet-fix-race-condition-in-packet_set_ring.patch
+
+# CVE-2016-9793 rhbz 1402013 1402014
+Patch858: 0001-net-avoid-signed-overflows-for-SO_-SND-RCV-BUFFORCE.patch
+
+# CVE-2016-9576 rhbz 1403145 1403146
+Patch859: 0001-Don-t-feed-anything-but-regular-iovec-s-to-blk_rq_ma.patch
+
 #rhbz 1393513
-Patch856: revert_pts_before_reboot.patch
+Patch860: revert_pts_before_reboot.patch
 
 # END OF PATCH DEFINITIONS
 
@@ -2168,8 +2179,37 @@ fi
 #
 # 
 %changelog
-* Fri Dec 02 2016 Daniele Viganò <daniele@vigano.me> - 4.8.10-201~dv
+* Sun Dec 11 2016 Daniele Viganò <daniele@vigano.me> - 4.8.13-201~dv
 - revert 'ACPI: Execute _PTS before system reboot' (rhbz 1393513)
+
+* Fri Dec 09 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.13-200
+- Linux v4.8.13
+- CVE-2016-9576 fix use after free in SCSI generic device interface (rhbz 1403145 1403146)
+
+* Wed Dec 07 2016 Laura Abbott <labbott@fedoraproject.org>
+- Disable CONFIG_AF_KCM (rhbz 1402489)
+
+* Wed Dec 07 2016 Justin M. Forbes <jforbes@fedoraproject.org>
+- CVE-2016-9793 avoid signed overflows for SO_{SND|RCV}BUFFORCE (rhbz 1402013 1402014)
+
+* Tue Dec 06 2016 Justin M. Forbes <jforbes@fedoraproject.org>
+- CVE-2016-8655 fix race condition in packet_set_ring (rhbz 1400019 1401820)
+
+* Fri Dec 02 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.12-200
+- Linux v4.8.12
+- CVE-2016-9755 Fix Out-of-bounds write issue when defragmenting ipv6 packets (rhbz 1400904 1400905)
+- CVE-2016-9756 Fix kvm: stack memory information leakage (rhbz 1400468 1400469)
+- Fix kvm: out of bounds memory access via vcpu_id (rhbz 1400804 1400805)
+
+* Mon Nov 28 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.11-200
+- Linux v4.8.11
+- CVE-2016-8650 Fix NULL ptr dereference in mpi_powm() (rhbz 1395187 1398463)
+
+* Mon Nov 28 2016 Peter Robinson <pbrobinson@fedoraproject.org>
+- Add upstream patch to fix all ARMv7 devices set to initial 200Mhz
+
+* Tue Nov 22 2016 Josh Boyer <jwboyer@fedoraproject.org>
+- Add patch from Dave Anderson to fix live system crash analysis on Aarch64
 
 * Mon Nov 21 2016 Justin M. Forbes <jforbes@fedoraproject.org> - 4.8.10-200
 - Linux v4.8.10
